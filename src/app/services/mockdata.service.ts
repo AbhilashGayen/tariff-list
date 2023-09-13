@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Tariff } from '../models/tariff.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class MockdataService {
 
   constructor(private http: HttpClient) { }
 
-  getMockdata(): Observable<any[]> {
-    return this.http.get<any[]>(this.url);
+  getMockdata(): Observable<Tariff[]> {
+    return this.http.get<Tariff[]>(this.url);
   }
 }
