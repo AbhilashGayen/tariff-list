@@ -1,0 +1,185 @@
+$desktop: 1200px;
+$tablet: 768px;
+$mobile: 600px;
+
+$header-widths: (
+  serial-no: 5%,
+  name: 20%,
+  speeds: 30%,
+  benefits: 20%,
+  cost: 25%
+);
+
+$header-tablet-widths: (
+  serial-no: 5%,
+  name: 30%,
+  speeds: 30%,
+  cost: 35%
+);
+
+$header-mobile-widths: (
+  serial-no: 10%,
+  name: 30%,
+  speeds: 30%,
+  cost: 30%
+);
+
+$cell-padding: 0.5rem;
+
+.tariff {
+
+  &-header,
+  &-data {
+
+    @each $cell, $width in $header-widths {
+      .-#{$cell} {
+        width: $width;
+      }
+    }
+
+    display: flex;
+    width: 100%;
+    margin: 1rem;
+    padding: $cell-padding;
+  }
+
+  &-header {
+    font-weight: bold;
+
+    label {
+      cursor: pointer;
+    }
+
+    .-cost {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-data {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    .-serial-no {
+      text-align: center;
+    }
+
+    .-speeds {
+      .-speed {
+
+        &.-download,
+        &.-upload {
+          margin-bottom: 0.5rem;
+
+          i {
+            color: #888;
+            padding: 0.2rem 1rem;
+            border: 2px solid black;
+          }
+
+          span {
+            padding: 0.2rem 1rem;
+            border: 1px solid black;
+            border-top-right-radius: 1rem 2rem;
+            border-bottom-right-radius: 1rem 2rem;
+          }
+        }
+      }
+    }
+
+    .-benefits {
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .-cost {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .-price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: $cell-padding;
+      }
+
+      button {
+        margin-left: auto;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background: #333;
+        color: #fff;
+
+        i {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+
+    &-header,
+    &-data {
+      @each $cell, $width in $header-tablet-widths {
+        .-#{$cell} {
+          width: $width;
+        }
+      }
+
+      .-benefits {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: $mobile) {
+
+      &-header,
+      &-data {
+
+        @each $cell, $width in $header-mobile-widths {
+          .-#{$cell} {
+            width: $width;
+          }
+        }
+
+        .-benefits,
+        .-speeds .-upload {
+          display: none;
+        }
+
+        .-speeds .-download {
+
+          i,
+          span {
+            border: none !important;
+            padding: 0 !important;
+          }
+        }
+
+        .-cost {
+          display: flex;
+          flex-direction: row;
+
+          button {
+            height: 100%;
+            font-size: 0;
+            padding: 0;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.-currency {
+  padding-left: 0.3rem;
+}

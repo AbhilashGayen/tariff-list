@@ -1,22 +1,81 @@
-<div class="tariff-header">
-  <div class="serial-no"></div>
-  <div class="tariff-name" (click)="sortBy('name')">Name</div>
-  <div class="tariff-speeds">
-    <span (click)="sortBy('downloadSpeed')">Download</span>
-    <span (click)="sortBy('uploadSpeed')">Upload</span>
+<div class="tariff">
+  <div class="tariff-header">
+    <div class="tariff-cell -serial-no"></div>
+    <div class="tariff-cell -name icon-text-container">
+      <label (click)="sortBy('name')">Name</label>
+      <ng-container *ngIf="sortParams.sortField === 'name'">
+        <i class="material-icons">
+          {{sortParams.sortOrder==='asc'? 'expand_less':'expand_more'}}
+        </i>
+      </ng-container>
+    </div>
+    <div class="tariff-cell -speeds">
+      <div class="-download icon-text-container">
+        <label (click)="sortBy('downloadSpeed')">Download</label>
+        <ng-container *ngIf="sortParams.sortField === 'downloadSpeed'">
+          <i class="material-icons">
+            {{sortParams.sortOrder==='asc'? 'expand_less':'expand_more'}}
+          </i>
+        </ng-container>
+      </div>
+      <div class="-upload icon-text-container">
+        <label (click)="sortBy('uploadSpeed')">Upload</label>
+        <ng-container *ngIf="sortParams.sortField === 'uploadSpeed'">
+          <i class="material-icons">
+            {{sortParams.sortOrder==='asc'? 'expand_less':'expand_more'}}
+          </i>
+        </ng-container>
+      </div>
+    </div>
+    <div class="tariff-cell -benefits icon-text-container">
+      <label (click)="sortBy('benefits')">Benefits</label>
+      <ng-container *ngIf="sortParams.sortField === 'benefits'">
+        <i class="material-icons">
+          {{sortParams.sortOrder==='asc'? 'expand_less':'expand_more'}}
+        </i>
+      </ng-container>
+    </div>
+    <div class="tariff-cell -cost">
+      <div class="-price icon-text-container">
+        <label (click)="sortBy('cost')">Price</label>
+        <ng-container *ngIf="sortParams.sortField === 'cost'">
+          <i class="material-icons">
+            {{sortParams.sortOrder==='asc'? 'expand_less':'expand_more'}}
+          </i>
+        </ng-container>
+      </div>
+    </div>
   </div>
-  <div class="tariff-benefits" (click)="sortBy('benefits')">Benefits</div>
-  <div class="tariff-cost" (click)="sortBy('cost')">Cost</div>
-</div>
 
-<div *ngFor="let plan of plans|sortPlans: sortParams; let i = index">
-  <div class="serial-no">{{i+1}}</div>
-  <div class="tariff-name">{{plan.name}}</div>
-  <div class="tariff-speeds">{{plan.speeds.download}}/{{plan.speeds.upload}}</div>
-  <div class="tariff-benefits">
-    <ul>
-      <li *ngFor="let benefit of plan.benefits">{{benefit}}</li>
-    </ul>
+  <div class="tariff-data" *ngFor="let plan of plans|sortPlans: sortParams; let i = index">
+    <div class="tariff-cell -serial-no">{{i+1}}.</div>
+    <div class="tariff-cell -name">{{plan.name}}</div>
+    <div class="tariff-cell -speeds">
+      <div class="-speed -download icon-text-container">
+        <i class="material-icons">arrow_downward</i>
+        <span>{{plan.speeds.download}} Mbit/s</span>
+      </div>
+      <div class="-speed -upload icon-text-container">
+        <i class="material-icons">arrow_upward</i>
+        <span>{{plan.speeds.upload}} Mbit/s</span>
+      </div>
+    </div>
+    <div class="tariff-cell -benefits">
+      <ul>
+        <li *ngFor="let benefit of plan.benefits">
+          {{benefit}}
+        </li>
+      </ul>
+    </div>
+    <div class="tariff-cell -cost">
+      <div class="-price icon-text-container">
+        {{plan.cost|number:'1.2-2'}}
+        <i class="material-icons -currency">euro</i>
+      </div>
+      <button class="icon-text-container">
+        To Tariff
+        <i class="material-icons">chevron_right</i>
+      </button>
+    </div>
   </div>
-  <div class="tariff-cost">{{plan.cost}}</div>
 </div>
