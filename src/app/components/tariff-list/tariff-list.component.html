@@ -1,9 +1,12 @@
 <div class="tariff-header">
   <div class="serial-no"></div>
   <div class="tariff-name" (click)="sortBy('name')">Name</div>
-  <div class="tariff-speeds">Speeds</div>
-  <div class="tariff-benefits">Benefits</div>
-  <div class="tariff-cost">Cost</div>
+  <div class="tariff-speeds">
+    <span (click)="sortBy('downloadSpeed')">Download</span>
+    <span (click)="sortBy('uploadSpeed')">Upload</span>
+  </div>
+  <div class="tariff-benefits" (click)="sortBy('benefits')">Benefits</div>
+  <div class="tariff-cost" (click)="sortBy('cost')">Cost</div>
 </div>
 
 <div *ngFor="let plan of plans|sortPlans: sortParams; let i = index">

@@ -18,6 +18,14 @@ export class SortPlansPipe implements PipeTransform {
       switch (sortField) {
         case 'name':
           return a.name.localeCompare(b.name);
+        case 'uploadSpeed':
+          return a.speeds.upload - b.speeds.upload;
+        case 'downloadSpeed':
+          return a.speeds.download - b.speeds.download;
+        case 'benefits':
+          return a.benefits.length - b.benefits.length;
+        case 'cost':
+          return a.cost - b.cost;
         default:
           return 0;
       }

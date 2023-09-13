@@ -30,7 +30,7 @@ export class TariffListComponent implements OnInit {
     })
   }
 
-  sortBy(sortField: string) {
+  sortBy(sortField: SortColumns) {
     const isCurrentField = sortField === this.sortParams.sortField;
     const sortOrder = isCurrentField
       ? this.sortParams.sortOrder === 'asc' ? 'desc' : 'asc'
@@ -42,7 +42,9 @@ export class TariffListComponent implements OnInit {
 
 
 export interface SortParams {
-  sortField: 'name';
-  sortOrder: 'asc' | 'desc'
-
+  sortField: SortColumns;
+  sortOrder: SortOrder;
 }
+
+type SortColumns = 'name' | 'uploadSpeed' | 'downloadSpeed' | 'cost' | 'benefits';
+type SortOrder = 'asc' | 'desc'
