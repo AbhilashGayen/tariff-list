@@ -1,0 +1,250 @@
+[
+    {
+        "name": "Basic Plan",
+        "speeds": {
+            "upload": 10,
+            "download": 50
+        },
+        "benefits": [
+            "Unlimited Data",
+            "24/7 Support"
+        ],
+        "cost": 30
+    },
+    {
+        "name": "Standard Plan",
+        "speeds": {
+            "upload": 25,
+            "download": 100
+        },
+        "benefits": [
+            "Unlimited Data",
+            "HD Streaming",
+            "Free Installation"
+        ],
+        "cost": 50
+    },
+    {
+        "name": "Premium Plan",
+        "speeds": {
+            "upload": 50,
+            "download": 200
+        },
+        "benefits": [
+            "Unlimited Data",
+            "Ultra HD Streaming",
+            "Free Installation",
+            "Premium Channels"
+        ],
+        "cost": 80
+    },
+    {
+        "name": "Ultra Plan",
+        "speeds": {
+            "upload": 100,
+            "download": 500
+        },
+        "benefits": [
+            "Unlimited Data",
+            "Ultra HD Streaming",
+            "Free Installation",
+            "Premium Channels",
+            "Home Security"
+        ],
+        "cost": 120
+    },
+    {
+        "name": "Business Plan A",
+        "speeds": {
+            "upload": 100,
+            "download": 200
+        },
+        "benefits": [
+            "Dedicated Support",
+            "Static IP"
+        ],
+        "cost": 100
+    },
+    {
+        "name": "Business Plan B",
+        "speeds": {
+            "upload": 200,
+            "download": 400
+        },
+        "benefits": [
+            "Dedicated Support",
+            "Static IP",
+            "Backup Connection"
+        ],
+        "cost": 150
+    },
+    {
+        "name": "Family Plan",
+        "speeds": {
+            "upload": 50,
+            "download": 100
+        },
+        "benefits": [
+            "Unlimited Data",
+            "Parental Controls"
+        ],
+        "cost": 60
+    },
+    {
+        "name": "Student Plan",
+        "speeds": {
+            "upload": 25,
+            "download": 50
+        },
+        "benefits": [
+            "Unlimited Data",
+            "Educational Content"
+        ],
+        "cost": 40
+    },
+    {
+        "name": "Gamer Plan",
+        "speeds": {
+            "upload": 50,
+            "download": 150
+        },
+        "benefits": [
+            "Low Latency",
+            "Gaming VPN"
+        ],
+        "cost": 70
+    },
+    {
+        "name": "Senior Plan",
+        "speeds": {
+            "upload": 10,
+            "download": 25
+        },
+        "benefits": [
+            "Affordable Pricing",
+            "Senior-Friendly Support"
+        ],
+        "cost": 25
+    },
+    {
+        "name": "VIP Plan",
+        "speeds": {
+            "upload": 100,
+            "download": 300
+        },
+        "benefits": [
+            "Priority Support",
+            "Exclusive Content"
+        ],
+        "cost": 90
+    },
+    {
+        "name": "Traveler Plan",
+        "speeds": {
+            "upload": 25,
+            "download": 75
+        },
+        "benefits": [
+            "Global Access",
+            "Travel Discounts"
+        ],
+        "cost": 45
+    },
+    {
+        "name": "Smart Home Plan",
+        "speeds": {
+            "upload": 50,
+            "download": 150
+        },
+        "benefits": [
+            "IoT Integration",
+            "Smart Home Hub"
+        ],
+        "cost": 75
+    },
+    {
+        "name": "Freelancer Plan",
+        "speeds": {
+            "upload": 100,
+            "download": 200
+        },
+        "benefits": [
+            "Productivity Tools",
+            "Collaboration Suite"
+        ],
+        "cost": 80
+    },
+    {
+        "name": "Starter Plan",
+        "speeds": {
+            "upload": 10,
+            "download": 25
+        },
+        "benefits": [
+            "Basic Internet Access",
+            "Email Support"
+        ],
+        "cost": 20
+    },
+    {
+        "name": "Pro Plan",
+        "speeds": {
+            "upload": 50,
+            "download": 150
+        },
+        "benefits": [
+            "Business Tools",
+            "Priority Support"
+        ],
+        "cost": 70
+    },
+    {
+        "name": "Corporate Plan A",
+        "speeds": {
+            "upload": 100,
+            "download": 200
+        },
+        "benefits": [
+            "Dedicated Account Manager",
+            "Enterprise Solutions"
+        ],
+        "cost": 120
+    },
+    {
+        "name": "Corporate Plan B",
+        "speeds": {
+            "upload": 200,
+            "download": 400
+        },
+        "benefits": [
+            "Dedicated Account Manager",
+            "Enterprise Solutions",
+            "Backup Connection"
+        ],
+        "cost": 180
+    },
+    {
+        "name": "Enterprise Plan",
+        "speeds": {
+            "upload": 500,
+            "download": 1000
+        },
+        "benefits": [
+            "Custom Solutions",
+            "24/7 Enterprise Support"
+        ],
+        "cost": 300
+    },
+    {
+        "name": "Developer Plan",
+        "speeds": {
+            "upload": 1000,
+            "download": 2000
+        },
+        "benefits": [
+            "Developer Tools",
+            "API Access"
+        ],
+        "cost": 500
+    }
+]
