@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Tariff } from 'src/app/models/tariff.model';
 import { MockdataService } from 'src/app/services/mockdata.service';
 
@@ -10,7 +11,17 @@ import { MockdataService } from 'src/app/services/mockdata.service';
 export class TariffListComponent implements OnInit {
   plans: Tariff[] = [];
 
-  constructor(private mockdataSvc: MockdataService) {
+  sortForm = this.fromBuilder.nonNullable.group({
+    sortField: 'name',
+    sortOrder: 'asc'
+  })
+
+  get sortParams(): SortParams {
+    const { sortField, sortOrder } = this.sortForm.getRawValue();
+    return { sortField, sortOrder } as SortParams;
+  }
+
+  constructor(private mockdataSvc: MockdataService, private fromBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -18,5 +29,20 @@ export class TariffListComponent implements OnInit {
       this.plans = response;
     })
   }
+
+  sortBy(sortField: string) {
+    const isCurrentField = sortField === this.sortParams.sortField;
+    const sortOrder = isCurrentField
+      ? this.sortParams.sortOrder === 'asc' ? 'desc' : 'asc'
+      : 'asc';
+
+    this.sortForm.patchValue({ sortField, sortOrder })
+  }
+}
+
+
+export interface SortParams {
+  sortField: 'name';
+  sortOrder: 'asc' | 'desc'
 
 }
