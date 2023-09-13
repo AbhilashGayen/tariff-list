@@ -1,0 +1,19 @@
+<div class="tariff-header">
+  <div class="serial-no"></div>
+  <div class="tariff-name">Name</div>
+  <div class="tariff-speeds">Speeds</div>
+  <div class="tariff-benefits">Benefits</div>
+  <div class="tariff-cost">Cost</div>
+</div>
+
+<div *ngFor="let plan of plans; let i = index">
+  <div class="serial-no">{{i+1}}</div>
+  <div class="tariff-name">{{plan.name}}</div>
+  <div class="tariff-speeds">{{plan.speeds.download}}/{{plan.speeds.upload}}</div>
+  <div class="tariff-benefits">
+    <ul>
+      <li *ngFor="let benefit of plan.benefits">{{benefit}}</li>
+    </ul>
+  </div>
+  <div class="tariff-cost">{{plan.cost}}</div>
+</div>
