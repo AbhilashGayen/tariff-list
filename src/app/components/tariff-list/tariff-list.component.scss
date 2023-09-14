@@ -161,15 +161,14 @@ $cell-padding: 0.5rem;
           width: $width;
         }
       }
-    }
-
-    &-data {
 
       .-benefits,
       .-speeds .-upload {
         display: none;
       }
+    }
 
+    &-data {
       .-speeds .-download {
 
         i,
