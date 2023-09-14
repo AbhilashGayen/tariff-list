@@ -74,17 +74,23 @@ $cell-padding: 0.5rem;
         &.-upload {
           margin-bottom: 0.5rem;
 
+          label {
+            display: block;
+          }
+
           i {
-            color: #888;
-            padding: 0.2rem 1rem;
+            display: inline-block;
             border: 2px solid black;
+            padding: 0.2rem 1rem;
           }
 
           span {
-            padding: 0.2rem 1rem;
-            border: 1px solid black;
-            border-top-right-radius: 1rem 2rem;
-            border-bottom-right-radius: 1rem 2rem;
+            display: inline-block;
+            border: 2px solid black;
+            border-left: none;
+            padding: 0.2rem 2rem;
+            border-top-right-radius: 1rem 1rem;
+            border-bottom-right-radius: 1rem 1rem;
           }
         }
       }
@@ -136,50 +142,56 @@ $cell-padding: 0.5rem;
       .-benefits {
         display: none;
       }
-
     }
 
-    @media (max-width: $mobile) {
-
-      &-header,
-      &-data {
-
-        @each $cell, $width in $header-mobile-widths {
-          .-#{$cell} {
-            width: $width;
-          }
-        }
-
-        .-benefits,
-        .-speeds .-upload {
-          display: none;
-        }
-
-        .-speeds .-download {
-
-          i,
-          span {
-            border: none !important;
-            padding: 0 !important;
-          }
-        }
-
-        .-cost {
-          display: flex;
-          flex-direction: row;
-
-          button {
-            height: 100%;
-            font-size: 0;
-            padding: 0;
-          }
-
-        }
+    &-data {
+      .-speeds label {
+        display: none;
       }
     }
   }
-}
 
-.-currency {
-  padding-left: 0.3rem;
+  @media (max-width: $mobile) {
+
+    &-header,
+    &-data {
+
+      @each $cell, $width in $header-mobile-widths {
+        .-#{$cell} {
+          width: $width;
+        }
+      }
+    }
+
+    &-data {
+
+      .-benefits,
+      .-speeds .-upload {
+        display: none;
+      }
+
+      .-speeds .-download {
+
+        i,
+        span {
+          border: none !important;
+          padding: 0 !important;
+        }
+      }
+
+      .-cost {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        button {
+          margin-left: 1rem;
+          height: 100%;
+          font-size: 0;
+          padding: 0;
+        }
+
+      }
+    }
+  }
 }

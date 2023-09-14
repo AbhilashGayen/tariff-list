@@ -1,13 +1,17 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TariffListComponent } from './components/tariff-list/tariff-list.component';
-import { MockdataService } from './services/mockdata.service';
 import { SortPlansPipe } from './pipes/sort-plans.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
+import { MockdataService } from './services/mockdata.service';
+import localeDE from '@angular/common/locales/de';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeDE);
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [MockdataService],
+  providers: [MockdataService,
+    {
+      provide: LOCALE_ID,
+      useValue: 'de'
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

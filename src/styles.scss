@@ -11,19 +11,25 @@ $mobile: 600px;
     font-size: 16px;
     font-family: 'Mulish', sans-serif;
 
+    .material-icons {
+        font-size: 20px;
+        line-height: inherit;
+        vertical-align: bottom;
+    }
+
     @media (max-width: $tablet) {
         font-size: 12px;
 
         .material-icons {
-            font-size: 14px;
+            font-size: 15px;
         }
     }
 
     @media (max-width: $mobile) {
         font-size: 10px;
-
-        .material-icons {
-            font-size: 12px;
-        }
     }
+}
+
+body {
+    background-color: #f5f7f9;
 }

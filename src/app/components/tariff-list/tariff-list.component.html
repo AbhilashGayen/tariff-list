@@ -51,11 +51,13 @@
     <div class="tariff-cell -serial-no">{{i+1}}.</div>
     <div class="tariff-cell -name">{{plan.name}}</div>
     <div class="tariff-cell -speeds">
-      <div class="-speed -download icon-text-container">
+      <label>Download</label>
+      <div class="-speed -download">
         <i class="material-icons">arrow_downward</i>
         <span>{{plan.speeds.download}} Mbit/s</span>
       </div>
-      <div class="-speed -upload icon-text-container">
+      <label>Upload</label>
+      <div class="-speed -upload">
         <i class="material-icons">arrow_upward</i>
         <span>{{plan.speeds.upload}} Mbit/s</span>
       </div>
@@ -68,9 +70,8 @@
       </ul>
     </div>
     <div class="tariff-cell -cost">
-      <div class="-price icon-text-container">
-        {{plan.cost|number:'1.2-2'}}
-        <i class="material-icons -currency">euro</i>
+      <div class="-price">
+        {{plan.cost|currency:'EUR':true}}
       </div>
       <button class="icon-text-container">
         To Tariff
